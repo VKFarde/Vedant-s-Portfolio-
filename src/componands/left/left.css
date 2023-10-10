@@ -1,0 +1,55 @@
+.lfcon {
+  position: fixed;
+  top: 40%;
+  left: 20px;
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  font-size: 25px;
+  color: var(--slate);
+}
+.lfcon li a {
+  font-size: 20px;
+  text-decoration: none;
+  color: var(--slate);
+  transition: color 0.3s ease;
+}
+.lfcon li a:hover {
+  color: var(--green);
+}
+.lfcon li {
+  margin-right: 5px;
+  transition: transform 0.7s ease;
+}
+.lfcon li:hover {
+  transform: translateY(-5px);
+}
+
+.lfcon::after {
+  content: "";
+  display: block;
+  width: 1px;
+  height: 200px;
+  margin: 0px auto;
+  background-color: var(--light-slate);
+}
+
+@media screen and (max-width: 800px) {
+  .lfcon {
+    left: 0px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .lfcon {
+    position: relative;
+    max-height: 100%;
+    padding: 0 5%;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .lfcon::after {
+    display: none;
+    visibility: none;
+  }
+}

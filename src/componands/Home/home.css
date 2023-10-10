@@ -1,0 +1,106 @@
+/* Style for the main home container */
+.home {
+  max-width: 100%;
+  background-color: var(--navy);
+  padding: 5% 10%;
+  text-align: left;
+  margin: 0;
+  margin-top: 70px;
+}
+
+/* Style for the container within the home */
+.home-con {
+  max-width: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Style for the "Hi, my name is" heading */
+.home-con-head h3 {
+  margin: 0px 0px 30px 4px;
+  color: var(--green);
+  font-family: var(--font-mono);
+  font-size: clamp(var(--fz-sm), 5vw, var(--fz-md));
+  font-weight: 400;
+}
+
+/* Style for the name */
+
+.home-con-name h1 {
+  color: var(--lightest-slate);
+  margin: 0px;
+  font-size: clamp(40px, 8vw, 80px);
+  font-weight: 600;
+  color: var(--lightest-slate);
+  line-height: 1.1;
+  overflow: hidden;
+}
+
+/* Style for the "I build things for the web" heading */
+
+.home-con-head-h h1 {
+  overflow: hidden;
+  margin: 0px;
+  font-size: clamp(40px, 8vw, 80px);
+  margin-top: 5px;
+  color: var(--slate);
+  line-height: 1;
+  font-weight: bold;
+  align-items: center;
+}
+
+/* Style for the description paragraph */
+.home-con-head-p p {
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  -webkit-font-smoothing: antialiased;
+  color: var(--slate);
+  font-family: var(--font-sans);
+  font-size: var(--fz-xl);
+  line-height: 1.3;
+}
+
+/* Style for the GitHub button */
+.home-con-button button {
+  color: var(--green);
+  background-color: transparent;
+  border: 1px solid var(--green);
+  border-radius: var(--border-radius);
+  padding: 1.25rem 1.75rem;
+  font-size: var(--fz-sm);
+  font-family: var(--font-mono);
+  line-height: 1;
+  text-decoration: none;
+  transition: var(--transition);
+  margin-left: 20px;
+  margin-top: 50px;
+}
+
+/* Style for the GitHub button on hover */
+.home-con-button button:hover {
+  animation: shadow-pop-br 0.2s ease both;
+  cursor: pointer;
+}
+
+/* Remove underline from anchor tag */
+.home-con-button a {
+  text-decoration: none;
+  color: inherit;
+}
+
+@keyframes shadow-pop-br {
+  0% {
+    box-shadow: 0 0 var(--green), 0 0 var(--green), 0 0 var(--green),
+      0 0 var(--green), 0 0 var(--green);
+    transform: translateX(0) translateY(0);
+  }
+  100% {
+    box-shadow: 1px 1px var(--green), 2px 2px var(--green), 3px 3px var(--green),
+      4px 4px var(--green), 5px 5px var(--green);
+    transform: translateX(0px) translateY(-6px);
+  }
+}

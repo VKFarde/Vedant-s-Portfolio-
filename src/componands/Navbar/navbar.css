@@ -1,0 +1,246 @@
+/* Reset some default styles */
+header {
+  max-width: 100%;
+  min-width: 100%;
+  margin: 0;
+  padding: 1% 3%;
+  background-color: var(--navy);
+  overflow-x: hidden;
+  box-sizing: border-box;
+  position: fixed;
+  display: flex;
+  top: 0px;
+  z-index: 100;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* Navigation Styles */
+nav {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+}
+
+.nav-con {
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background-color: var(--navy);
+  width: 60px;
+  height: 60px;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-con > a > img {
+  width: 100%;
+  height: 100%;
+
+  transition: transform 0.6s ease; /* Add a transition for smooth scaling */
+}
+
+.nav-con:hover {
+  border-radius: 50%;
+  animation: up 2s linear, rotate-center 9s linear infinite,
+    shadow-drop-center 1s linear infinite;
+  cursor: pointer;
+}
+
+@keyframes up {
+  0% {
+    transform: scale(0%);
+  }
+  100% {
+    transform: scale(100%);
+  }
+}
+/* Keyframes */
+@keyframes shadow-pop-br {
+  0% {
+    box-shadow: 0 0 var(--green), 0 0 var(--green), 0 0 var(--green),
+      0 0 var(--green), 0 0 var(--green), 0 0 var(--green), 0 0 var(--green),
+      0 0 var(--green);
+    transform: translateX(0) translateY(0);
+  }
+  100% {
+    box-shadow: 1px 1px var(--green), 2px 2px var(--green), 3px 3px var(--green),
+      4px 4px var(--green), 5px 5px var(--green), 6px 6px var(--green),
+      7px 7px var(--green), 8px 8px var(--green);
+    transform: translateX(-8px) translateY(-8px);
+  }
+}
+
+@keyframes shadow-drop-center {
+  0% {
+    box-shadow: 0 0 0 0 transparent;
+  }
+  100% {
+    box-shadow: 0 0 6px 0 var(--green);
+    transform: scale(90%);
+  }
+}
+
+@keyframes rotate-center {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Normal Navigation Menu */
+.nav-menu ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+}
+
+.nav-menu li {
+  margin-right: 20px;
+  display: flex;
+}
+
+.nav-menu a span {
+  color: var(--green);
+  font-size: var(--fz-xxs);
+}
+
+.nav-menu a {
+  color: #fff;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: color 0.3s ease;
+  cursor: pointer;
+  font-size: var(--fz-xxs);
+}
+
+.nav-menu a:hover {
+  color: var(--green);
+}
+
+/* Responsive Navigation Menu */
+.h-menu ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+  gap: 20px;
+}
+
+.h-menu li {
+  margin-right: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.h-menu a span {
+  color: var(--green);
+  font-size: var(--fz-xxs);
+}
+
+.h-menu a {
+  color: #fff;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: color 0.3s ease;
+  cursor: pointer;
+  font-size: var(--fz-xxs);
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  padding: 1px;
+  flex-direction: column;
+}
+
+.h-menu a > h4:hover {
+  color: var(--green);
+}
+
+/* Buttons */
+.nav-menu button,
+.h-menu button {
+  color: var(--green);
+  background-color: transparent;
+  border: 1px solid var(--green);
+  border-radius: var(--border-radius);
+  padding: 1.25rem 1.75rem;
+  cursor: pointer;
+  font-size: var(--fz-xxs);
+  margin-right: 10px;
+  margin-top: 9px;
+  margin-left: 10px;
+}
+.nav-menu button {
+  transition: var(--transition);
+}
+.nav-menu button:hover {
+  animation: shadow-pop-br 0.2s ease both;
+  cursor: pointer;
+}
+
+.h-menu button {
+  transition: background-color 0.3s ease;
+}
+
+.h-menu button:hover {
+  cursor: pointer;
+  background-color: var(--dark-navy);
+  color: var(--blue);
+}
+
+/* Logo */
+.nav-menu-logo {
+  color: var(--green);
+  font-size: 60px;
+  display: block;
+  justify-content: center;
+  align-items: center;
+}
+
+.h-menu {
+  right: 0px;
+  top: 50px;
+  width: 150px;
+  position: fixed;
+  z-index: 888;
+  padding: 20px 10px;
+  border-bottom-left-radius: 20px;
+  justify-content: center;
+  align-items: center;
+  background: rgba(10, 25, 47, 0.799);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(7.5px);
+  -webkit-backdrop-filter: blur(7.5px);
+  border: 1px solid rgba(10, 25, 47, 0.3);
+}
+
+@media screen and (max-width: 400px) {
+  .nav-con {
+    border: none;
+    scale: (0.9);
+  }
+}

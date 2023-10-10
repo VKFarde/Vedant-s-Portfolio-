@@ -1,0 +1,153 @@
+.project {
+  max-width: 100%;
+  background-color: var(--navy);
+  padding: 5% 10%;
+  text-align: left;
+  margin: 0;
+}
+.pro-con {
+  padding: 0%;
+  margin: 0;
+  width: 100%;
+  height: auto;
+  justify-content: center;
+  align-items: center;
+}
+.pro-con > div {
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.pro-con > div > h2 {
+  font-size: clamp(24px, 5vw, var(--fz-heading));
+  margin: 0px 0px 10px;
+  font-weight: 600;
+  color: var(--lightest-slate);
+  line-height: 1.1;
+  overflow: hidden;
+}
+.pro-con > div > a {
+  display: inline-block;
+  position: relative;
+  color: var(--green);
+  transition: var(--transition);
+  font-family: var(--font-mono);
+  font-size: var(--fz-sm);
+  text-align: center;
+}
+.pro-con-c {
+  display: flex;
+  gap: 15px;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: flex-start;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  flex-wrap: wrap;
+}
+.card {
+  width: 270px;
+  aspect-ratio: 1/1;
+  text-align: left;
+  box-shadow: 0 10px 30px -15px var(--navy-shadow);
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 1.75rem;
+  border-radius: var(--border-radius);
+  background-color: var(--lightest-navy);
+  transition: var(--transition);
+}
+.card:hover {
+  background-color: var(--light-navy);
+}
+.card-head {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.card-floder {
+  font-size: 40px;
+  color: var(--green);
+}
+.card-git {
+  font-size: 28px;
+}
+.card-git > a {
+  text-decoration: none;
+  color: var(--slate);
+}
+.card-title {
+  margin: 0px 0px 10px;
+  color: var(--lightest-slate);
+  font-size: var(--fz-xl);
+  flex-wrap: wrap;
+}
+.card-title > a {
+  text-decoration: none;
+  display: inline-block;
+  text-decoration: none;
+  text-decoration-skip-ink: auto;
+  color: var(--lightest-slate);
+  cursor: pointer;
+}
+
+.card-des {
+  color: var(--light-slate);
+  font-size: 15px;
+  flex-wrap: wrap;
+}
+.card-tech {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  color: var(--light-slate);
+  font-size: 12px;
+  margin-top: 40px;
+  gap: 5px;
+}
+.pro-but {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  padding: 20px;
+}
+
+.pro-but > button {
+  background-color: var(--dark-navy);
+  color: var(--green);
+  padding: 20px;
+  margin: 10px;
+  border-radius: 20px;
+  border: 1px solid var(--green);
+  box-shadow: 0 10px 30px -15px var(--navy-shadow);
+  font-size: 14px;
+}
+.pro-but > button:hover {
+  animation: shadow-pop-br 0.8s ease both;
+}
+
+@media screen and (max-width: 760px) {
+  .project {
+    transform: translateY(-25px);
+  }
+}
+@keyframes shadow-pop-br {
+  0% {
+    box-shadow: 0 0 var(--green), 0 0 var(--green), 0 0 var(--green),
+      0 0 var(--green);
+    transform: translateX(0) translateY(0);
+  }
+  100% {
+    box-shadow: 1px 1px var(--green), 2px 2px var(--green), 3px 3px var(--green),
+      4px 4px var(--green);
+    transform: translateX(-8px) translateY(-8px);
+  }
+}

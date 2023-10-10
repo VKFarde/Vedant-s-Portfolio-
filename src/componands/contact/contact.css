@@ -1,0 +1,121 @@
+.contact {
+  max-width: 100%;
+  background-color: var(--navy);
+  padding: 5% 10%;
+  text-align: center;
+  margin: 0;
+  font-family: var(--font-mono);
+}
+.cont-con {
+  max-width: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.cont-con div > span {
+  color: var(--green);
+}
+.cont-con div > span::before {
+  content: "04.       ";
+  color: var(--green);
+}
+.cont-con div h1 {
+  color: var(--slate);
+  font-size: clamp(40px, 5vw, 60px);
+  font-family: var(--font-sans);
+  overflow: hidden;
+}
+.cont-con > div {
+  width: 70%;
+}
+
+.cont-con > div > p {
+  margin: 20px 0;
+}
+
+.cont-con div button {
+  width: 40%;
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid var(--green);
+  background-color: var(--navy);
+  color: var(--green);
+}
+.cont-con div button:hover {
+  animation: shadow-pop-br 0.8s ease both;
+}
+@keyframes shadow-pop-br {
+  0% {
+    box-shadow: 0 0 var(--green), 0 0 var(--green), 0 0 var(--green),
+      0 0 var(--green);
+    transform: translateX(0) translateY(0);
+  }
+  100% {
+    box-shadow: 1px 1px var(--green), 2px 2px var(--green), 3px 3px var(--green),
+      4px 4px var(--green);
+    transform: translateX(-8px) translateY(-8px);
+  }
+}
+@keyframes shadow-pop-br1 {
+  0% {
+    box-shadow: 0 0 var(--pink), 0 0 var(--pink), 0 0 var(--pink),
+      0 0 var(--pink);
+    transform: translateX(0) translateY(0);
+  }
+  100% {
+    box-shadow: 1px 1px var(--orange), 2px 2px var(--orange),
+      3px 3px var(--orange), 4px 4px var(--orange);
+    transform: translateX(-8px) translateY(-8px);
+  }
+}
+
+/* Style the container */
+.contact-form {
+  width: 90%;
+  max-width: 400px; /* Adjust the width as needed */
+  margin: 0 auto;
+  padding: 20px;
+  background-color: var(--navy);
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Style the form */
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Style the form inputs */
+input,
+textarea {
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid var(--green);
+  border-radius: 4px;
+  background: var(--light-navy);
+  color: var(--greengreen);
+}
+
+/* Style the submit button */
+#btn {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#btn:hover {
+  background-color: #0056b3;
+}
+@media (max-width: 768px) {
+  /* Adjust styling for smaller screens */
+  .contact-form {
+    max-width: 80%;
+  }
+}

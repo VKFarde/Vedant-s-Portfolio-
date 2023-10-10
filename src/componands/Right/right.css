@@ -1,0 +1,43 @@
+.rgcon {
+  width: 30px;
+  position: fixed;
+  bottom: 0px;
+  left: auto;
+  right: 40px;
+  z-index: 10;
+  color: var(--light-slate);
+}
+
+.rgcon a {
+  text-decoration: none;
+  color: var(--slate);
+  font-size: 15px;
+  writing-mode: vertical-rl;
+  margin: 20px auto;
+  transition: color 0.5s ease, transform 0.5s ease;
+}
+.rgcon::after {
+  content: "";
+  display: block;
+  width: 2px;
+  height: 200px;
+  margin: 0px auto;
+  background-color: var(--light-slate);
+  transition: transform 2s ease;
+}
+.rgcon a:hover {
+  color: var(--green);
+  transform: translateY(-5px);
+}
+@media screen and (max-width: 800px) {
+  .rgcon {
+    top: 30%;
+    right: 0px;
+  }
+}
+@media screen and (max-width: 450px) {
+  .rgcon {
+    display: none;
+    visibility: none;
+  }
+}
