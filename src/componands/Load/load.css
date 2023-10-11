@@ -1,0 +1,53 @@
+/* load.css */
+
+/* Styling for the loading container that centers the spinner */
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background-color: var(--dark-navy);
+  animation: color-change-2x 2s linear infinite alternate both;
+}
+
+/* Styling for the loading spinner */
+.loading-spinner {
+  height: 90vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Styling for the spinner image */
+.loading-spinner img {
+  width: 30%; /* Set the width of the image */
+  height: 30%; /* Set the height of the image */
+  animation: bounce-in-right 2s ease infinite both;
+}
+@keyframes bounce-in-right {
+  0% {
+    opacity: 0;
+    transform: translateX(2000px);
+  }
+  40% {
+    opacity: 1;
+    transform: translateY(0), translateX(-30px);
+  }
+  80% {
+    transform: translateY(15px), translateX(20px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes color-change-2x {
+  0% {
+    background: rgba(2, 4, 28, 0.6);
+  }
+  100% {
+    background: var(--navy);
+  }
+}

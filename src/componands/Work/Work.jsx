@@ -36,11 +36,9 @@ function Work() {
   return (
     <div className="work" id="project">
       <div className="work-con">
-        <h2 data-aos="fade-up" data-aos="zoom-in">
-          Some Things I’ve Built
-        </h2>
+        <h2 data-aos="fade-up">Some Things I’ve Built</h2>
         <ul className="work-con-lef">
-          <li className="work-con-lef-f" data-aos="fade-up" data-aos="zoom-in">
+          <li className="work-con-lef-f" data-aos="fade-up">
             <div
               className="work-video"
               onMouseEnter={handleMouseEnter}
@@ -60,7 +58,7 @@ function Work() {
               </div>
             </div>
 
-            <div className="work-con-con" data-aos="fade-up" data-aos="zoom-in">
+            <div className="work-con-con" data-aos="fade-up">
               <div>
                 <p>Featured Project</p>
                 <h3>SectorX</h3>
@@ -99,7 +97,7 @@ function Work() {
               </div>
             </div>
           </li>
-          <li className="work-con-ri" data-aos="fade-up" data-aos="zoom-in">
+          <li className="work-con-ri" data-aos="zoom-in">
             <div className="work-r-video">
               <div>
                 <a href="/">
@@ -145,7 +143,7 @@ function Work() {
               </div>
             </div>
           </li>
-          <li className="work-con-lef-f" data-aos="fade-up" data-aos="zoom-in">
+          <li className="work-con-lef-f" data-aos="zoom-in">
             <div
               className="work-video"
               onMouseEnter={MouseEnter}
