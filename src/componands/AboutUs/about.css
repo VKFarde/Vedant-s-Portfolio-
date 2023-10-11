@@ -253,7 +253,7 @@
     border: none;
     position: absolute; /* Add this line to position the pseudo-element */
     border-radius: 10px; /* You can add border-radius here as well if needed */
-    height: 85%;
+    height: 93%;
     width: 94%;
     background-color: var(--green-tint);
     transition: background-color 0.3s ease;
@@ -268,5 +268,10 @@
     border-radius: 10px;
     height: auto;
     z-index: 1;
+  }
+}
+@media screen and (max-width: 600px) {
+  .about-pic-con {
+    aspect-ratio: 9/10.5;
   }
 }

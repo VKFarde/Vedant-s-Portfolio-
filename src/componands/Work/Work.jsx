@@ -7,11 +7,32 @@ import doo from "../../assets/car.png";
 import pop from "../../assets/pop.png";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 import { FiGithub, FiSlack } from "react-icons/fi";
 
 function Work() {
+  const [activeMenu, setActiveMenu] = useState(true);
+  const [screenSize, setScreenSize] = useState(undefined);
+
+  useEffect(() => {
+    const handleResize = () => setScreenSize(window.innerWidth);
+
+    window.addEventListener("resize", handleResize);
+
+    handleResize();
+    setActiveMenu(false);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  useEffect(() => {
+    if (screenSize <= 800) {
+      setActiveMenu(true);
+    } else {
+      setActiveMenu(false);
+    }
+  }, [screenSize]);
+
   useEffect(() => {
     AOS.init();
     AOS.refresh();
@@ -38,9 +59,12 @@ function Work() {
       <div className="work-con">
         <h2 data-aos="fade-up">Some Things I’ve Built</h2>
         <ul className="work-con-lef">
-          <li className="work-con-lef-f" data-aos="fade-up">
+          <li
+            className={activeMenu ? "work-con-ri" : "work-con-lef-f"}
+            data-aos="fade-up"
+          >
             <div
-              className="work-video"
+              className={activeMenu ? "work-r-video" : "work-video"}
               onMouseEnter={handleMouseEnter}
               onMouseLeave={handleMouseLeave}
             >
@@ -50,7 +74,13 @@ function Work() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <video ref={videoRef} poster={too} width="600" loop>
+                  <video
+                    ref={videoRef}
+                    poster={too}
+                    width="560"
+                    height="340"
+                    loop
+                  >
                     <source src={loo} type="video/webm" />
                     <source src={loo} type="video/mp4" />
                   </video>
@@ -58,11 +88,14 @@ function Work() {
               </div>
             </div>
 
-            <div className="work-con-con" data-aos="fade-up">
+            <div
+              className={activeMenu ? "work-r-con-con" : "work-con-con"}
+              data-aos="fade-up"
+            >
               <div>
                 <p>Featured Project</p>
                 <h3>SectorX</h3>
-                <div className="work-des">
+                <div className={activeMenu ? "work-r-des" : "work-des"}>
                   <p>
                     A responsive web app using React.js and CSS. It integrates
                     real-time data from Coinbase API, displaying live
@@ -109,7 +142,7 @@ function Work() {
             <div className="work-r-con-con">
               <div>
                 <p>Featured Project</p>
-                <h3>SectorX</h3>
+                <h3>Protfolio</h3>
                 <div className="work-r-des">
                   <p>
                     Aa comprehensive web application entirely from scratch,
@@ -143,9 +176,12 @@ function Work() {
               </div>
             </div>
           </li>
-          <li className="work-con-lef-f" data-aos="zoom-in">
+          <li
+            className={activeMenu ? "work-con-ri" : "work-con-lef-f"}
+            data-aos="zoom-in"
+          >
             <div
-              className="work-video"
+              className={activeMenu ? "work-r-video" : "work-video"}
               onMouseEnter={MouseEnter}
               onMouseLeave={MouseLeave}
             >
@@ -155,7 +191,13 @@ function Work() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <video ref={videodeRef} poster={doo} width="600" loop>
+                  <video
+                    ref={videodeRef}
+                    poster={doo}
+                    width="560"
+                    height="340"
+                    loop
+                  >
                     <source src={moo} type="video/webm" />
                     <source src={moo} type="video/mp4" />
                   </video>
@@ -163,11 +205,11 @@ function Work() {
               </div>
             </div>
 
-            <div className="work-con-con">
+            <div className={activeMenu ? "work-r-con-con" : "work-con-con"}>
               <div>
                 <p>Featured Project</p>
                 <h3>Clone of Careerist</h3>
-                <div className="work-des">
+                <div className={activeMenu ? "work-r-des" : "work-des"}>
                   <p>
                     developed a full-stack application leveraging React.js and
                     Express.js. I seamlessly integrated MongoDB for efficient
