@@ -38,6 +38,7 @@ function Navbar() {
     document.body.appendChild(a);
     a.click();
     a.remove();
+    setclick(false);
   };
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -108,23 +109,23 @@ function Navbar() {
         <div className="h-menu" ref={tt}>
           <ul>
             <li>
-              <a href="#aboutus">
+              <a href="#aboutus" onClick={() => setclick(false)}>
                 <span>01.</span> <h4>About</h4>
               </a>
             </li>
             <li>
-              <a href="#experience">
+              <a href="#experience" onClick={() => setclick(false)}>
                 <span>02.</span> <h4>Experience</h4>
               </a>
             </li>
             <li>
-              <a href="#project">
+              <a href="#project" onClick={() => setclick(false)}>
                 <span>03.</span>
                 <h4>Project</h4>
               </a>
             </li>
             <li>
-              <a href="#contact">
+              <a href="#contact" onClick={() => setclick(false)}>
                 <span>04.</span>
                 <h4>Contact</h4>
               </a>
