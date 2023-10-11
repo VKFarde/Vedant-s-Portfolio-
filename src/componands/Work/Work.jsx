@@ -5,10 +5,17 @@ import moo from "../../assets/cari.mp4";
 import too from "../../assets/sex.png";
 import doo from "../../assets/car.png";
 import pop from "../../assets/pop.png";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 
 import { FiGithub, FiSlack } from "react-icons/fi";
 
 function Work() {
+  useEffect(() => {
+    AOS.init();
+    AOS.refresh();
+  }, []);
   const videoRef = useRef(null);
   const videodeRef = useRef(null);
   const handleMouseEnter = () => {
@@ -29,9 +36,11 @@ function Work() {
   return (
     <div className="work" id="project">
       <div className="work-con">
-        <h2>Some Things I’ve Built</h2>
+        <h2 data-aos="fade-up" data-aos="zoom-in">
+          Some Things I’ve Built
+        </h2>
         <ul className="work-con-lef">
-          <li className="work-con-lef-f">
+          <li className="work-con-lef-f" data-aos="fade-up" data-aos="zoom-in">
             <div
               className="work-video"
               onMouseEnter={handleMouseEnter}
@@ -51,7 +60,7 @@ function Work() {
               </div>
             </div>
 
-            <div className="work-con-con">
+            <div className="work-con-con" data-aos="fade-up" data-aos="zoom-in">
               <div>
                 <p>Featured Project</p>
                 <h3>SectorX</h3>
@@ -90,7 +99,7 @@ function Work() {
               </div>
             </div>
           </li>
-          <li className="work-con-ri">
+          <li className="work-con-ri" data-aos="fade-up" data-aos="zoom-in">
             <div className="work-r-video">
               <div>
                 <a href="/">
@@ -136,7 +145,7 @@ function Work() {
               </div>
             </div>
           </li>
-          <li className="work-con-lef-f">
+          <li className="work-con-lef-f" data-aos="fade-up" data-aos="zoom-in">
             <div
               className="work-video"
               onMouseEnter={MouseEnter}

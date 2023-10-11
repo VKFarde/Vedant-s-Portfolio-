@@ -1,10 +1,17 @@
 import { useState, useEffect } from "react";
 import "./experience.css";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 function Experience() {
   const [value, setvalue] = useState(100);
   const [active, setActiveMenu] = useState(true);
   const [screenSize, setScreenSize] = useState(undefined);
+
+  useEffect(() => {
+    AOS.init();
+    AOS.refresh();
+  }, []);
 
   useEffect(() => {
     const handleResize = () => setScreenSize(window.innerWidth);
@@ -26,10 +33,10 @@ function Experience() {
   return (
     <div className="experience" id="experience">
       <div className="experience-con">
-        <h2>Where I’ve Worked</h2>
+        <h2 data-aos="zoom-up-in">Where I’ve Worked</h2>
         <div className="experience-con-con">
           <div>
-            <div className="experience-con-button">
+            <div className="experience-con-button" data-aos="fade-right">
               <button
                 style={{
                   borderLeft:
@@ -62,7 +69,7 @@ function Experience() {
               </button>
             </div>
           </div>
-          <div className="experience-con-data">
+          <div className="experience-con-data" data-aos="zoom-in">
             {value === 100 && (
               <>
                 <h3>

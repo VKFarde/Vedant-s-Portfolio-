@@ -1,14 +1,26 @@
 import "./about.css";
 import lal from "../../assets/profile.jpg";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 
 function AboutUs() {
+  useEffect(() => {
+    AOS.init();
+    AOS.refresh();
+  }, []);
   return (
-    <div className="about" id="aboutus">
+    <div
+      className="about"
+      id="aboutus"
+      data-aos="fade-up"
+      data-aos-anchor-placement="top-bottom"
+    >
       <div className="about-con">
-        <h2>About</h2>
+        <h2 data-aos="zoom-in-up">About</h2>
         <div className="about-con-c">
           <div className="about-data">
-            <div className="about-data-info">
+            <div className="about-data-info" data-aos="flip-up">
               <p>
                 Hello! My name is vedant and I enjoy creating things that live
                 on the internet. My interest in web development started back in
@@ -53,7 +65,7 @@ function AboutUs() {
                 recently:
               </p>
             </div>
-            <div className="about-skills">
+            <div className="about-skills" data-aos="fade-up">
               <ul>
                 <li>JavaScript (ES6+)</li>
                 <li>React.js</li>
@@ -66,7 +78,7 @@ function AboutUs() {
               </ul>
             </div>
           </div>
-          <div className="about-pic">
+          <div className="about-pic" data-aos="fade-up-left">
             <div className="about-pic-con">
               <img src={lal} alt="profile-pic" />
             </div>

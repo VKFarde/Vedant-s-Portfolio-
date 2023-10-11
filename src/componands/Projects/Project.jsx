@@ -1,4 +1,6 @@
 import React from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import { useState, useEffect } from "react";
 import data from "../../data/data";
 import { FiFolder, FiGithub } from "react-icons/fi";
@@ -8,6 +10,10 @@ function Project() {
   const [activeMenu, setActiveMenu] = useState(3);
   const [active, setActive] = useState(false);
   const [screenSize, setScreenSize] = useState(undefined);
+  useEffect(() => {
+    AOS.init();
+    AOS.refresh();
+  }, []);
 
   useEffect(() => {
     const handleResize = () => setScreenSize(window.innerWidth);
@@ -29,18 +35,19 @@ function Project() {
   return (
     <div className="project">
       <div className="pro-con">
-        <div>
-          <h2>Other Noteworthy Projects</h2>
+        <div data-aso="zoom-in">
+          <h2 data-aos="fade-left">Other Noteworthy Projects</h2>
 
           <a
             href="https://github.com/VKFarde"
             target="_blank"
             rel="noopener noreferrer"
+            data-aso="zoom-in"
           >
             View my Github
           </a>
         </div>
-        <div className="pro-con-c">
+        <div className="pro-con-c" data-aos="flip-up">
           {active
             ? data.map((e) => (
                 <div className="card" key={e.link}>
@@ -72,7 +79,7 @@ function Project() {
             : data
                 .map((e) => (
                   <div className="card" key={e.link}>
-                    <div className="card-head">
+                    <div className="card-head" data-aso="fade-up">
                       <div className="card-floder">
                         <FiFolder />
                       </div>
@@ -100,7 +107,7 @@ function Project() {
                 .splice(0, activeMenu)}
         </div>
       </div>
-      <div className="pro-but">
+      <div className="pro-but" data-aos="zoom-in">
         <button
           onClick={() => {
             setActive(!active);

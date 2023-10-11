@@ -94,7 +94,11 @@ function Navbar() {
           ) : (
             <div className="nav-menu-min">
               <div className="nav-menu-logo" onClick={() => setclick(!click)}>
-                {click ? <GiCrossMark /> : <CgMenuGridO />}
+                {click ? (
+                  <GiCrossMark style={{ fontSize: "25px" }} />
+                ) : (
+                  <CgMenuGridO />
+                )}
               </div>
             </div>
           )}
